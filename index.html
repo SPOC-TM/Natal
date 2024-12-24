@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decoração Natalina</title>
+    <style>
+        /* Resetando o margin e padding */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Animação de piscamento para o topo da página */
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Decoracao de natal no topo */
+        .decoracao-natal {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(to right, red, green);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            animation: blink 1s infinite;
+            z-index: 10;
+        }
+
+        .decoracao-natal::before {
+            content: '🎄✨';
+            font-size: 50px;
+            margin-right: 20px;
+        }
+
+        .decoracao-natal::after {
+            content: '✨🎄';
+            font-size: 50px;
+            margin-left: 20px;
+        }
+
+        /* Estilo do ticket vermelho com a mensagem "Feliz Natal TM!" */
+        .ticket {
+            width: 350px;
+            height: 150px;
+            background-color: red;
+            color: white;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 150px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            z-index: 20;
+            border: 5px solid #9c0000;
+            background: linear-gradient(135deg, #ff4d4d, #cc0000);
+        }
+
+        .ticket::before {
+            content: "";
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 25px;
+            background-color: #9c0000;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .ticket span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Gato substituído por imagem */
+        .gato {
+            width: 200px;
+            height: 200px;
+            background-image: url('https://glif.app/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdzkwltgyd%2Fimage%2Fupload%2Fv1735045323%2Fglif-run-outputs%2Fad0zjoqyzkjnilfol8hb.jpg&w=1080&q=75');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            position: relative;
+            top: 350px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Decoração natalina no topo -->
+    <div class="decoracao-natal"></div>
+
+    <!-- Ticket vermelho -->
+    <div class="ticket">
+        <span>Feliz Natal TM!</span>
+    </div>
+
+    <!-- Gato com imagem base64 -->
+    <div class="gato"></div>
+</body>
+</html>
